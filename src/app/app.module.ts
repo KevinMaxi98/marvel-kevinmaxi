@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CharacterComponent } from './character/character.component';
 import { CharacterFormComponent } from './character-form/character-form.component';
+import { CharacterListComponent } from './character-list/character-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterComponent,
-    CharacterFormComponent
+    CharacterFormComponent,
+    CharacterListComponent
   ],
   imports: [
     BrowserModule

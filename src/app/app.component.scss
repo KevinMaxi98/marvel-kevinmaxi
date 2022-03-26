@@ -1,6 +1,24 @@
-.container {
-  display: block;
+$wrap: 'main-view';
+
+%header{
+
+}
+
+%controls-section{
+  display: flex;
+  justify-content: space-around;
+}
+
+.#{$wrap} {
+  display: grid;
   height: auto;
   width: auto;
+  justify-content: center;
+  &__header {
+    @extend %header
+  }
 
+  &__controls-section {
+    @extend %controls-section
+  }
 }

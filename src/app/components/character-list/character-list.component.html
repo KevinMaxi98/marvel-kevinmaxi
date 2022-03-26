@@ -1,6 +1,3 @@
 <div class="character-list">
-  <app-character class="character-list__item"></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
+  <app-character (specificCharacter)="editCharacter($event)" [show]="searchValue !== '' && character.title ? startsWith(character.title, searchValue) : true" *ngFor="let character of characters; index as i" class="character-list__item" [character]="character"></app-character>
 </div>

@@ -4,15 +4,15 @@
 
   </div>
   <div class="main-view__controls-section">
-    <input type="text" class="main-view__search" placeholder="&#xF002; &nbsp;Buscar" >
-    <button class="main-view__button">
+    <input (keyup)="changeSearchValue($event)"  type="text" class="main-view__search" placeholder="&#xF002; &nbsp;Buscar" >
+    <button (click)="onNewClick()" class="main-view__button">
       <i class="fa-solid fa-plus "></i>
       Nuevo</button>
   </div>
-  <div class="main-view__form">
-    <app-character-form></app-character-form>
+  <div class="main-view__form" >
+    <app-character-form [_id]="specificCharacter?._id" [idAuthor]="specificCharacter?.idAuthor" [body]="specificCharacter?.body" [title]="specificCharacter?.title" [image]="specificCharacter?.image" [editMode]="editMode" (showCharacterForm)="showCharacterForm = !showCharacterForm" *ngIf="showCharacterForm"></app-character-form>
   </div>
   <div class="main-view__character-list">
-    <app-character-list></app-character-list>
+    <app-character-list (specificCharacter)="editCharacter($event)"  [searchValue]="searchValue"></app-character-list>
   </div>
 </div>

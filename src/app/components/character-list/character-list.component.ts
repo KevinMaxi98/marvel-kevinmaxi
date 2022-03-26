@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {CharacterInterface} from "../interfaces/character.interface";
+import {CharactersService} from "../../services/characters.service";
 
 @Component({
   selector: 'app-character-list',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterListComponent implements OnInit {
 
-  constructor() { }
+  @Input() searchValue : string = "";
+  @Output() specificCharacter = new EventEmitter<CharacterInterface>()
 
-  ngOnInit(): void {
+  public characters: CharacterInterface[] = [];
+  public idCharacter: number = 0;
+  public nombreCharacter: string = "";
+  public imagenCharacter: string = "";
+  public descripcionCharacter: number = 0;
+  public editMode: boolean = false;
+
+
+  constructor(private characterService: CharactersService) {
+    this.characterService.charactersObserver.subscribe((obtainedCharacters) => {
+      this.characters = obtainedCharacters
+    }, error => {
+      console.log(error)
+    })
   }
 
+  async ngOnInit(){
+    await this.characterService.getCharacters()
+    console.log("Characters: ", this.characters)
+  }
+
+  startsWith(word: string, subword: string){
+    return word.toLocaleLowerCase().startsWith(subword.toLocaleLowerCase());
+  }
+
+
+  editCharacter(event: any) {
+    console.log(event)
+    this.specificCharacter.emit(event)
+  }
 }

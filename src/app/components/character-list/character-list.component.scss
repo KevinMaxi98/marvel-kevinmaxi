@@ -6,6 +6,7 @@ $wrap: 'character-list';
 }
 
 .#{$wrap} {
+  margin-top: 24px;
   &__item {
     @extend %item
   }

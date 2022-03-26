@@ -25,8 +25,16 @@ $wrap: 'main-view';
   color: white;
 }
 
+%character-list {
+  max-width: 100%;
+}
+
+%form {
+  width: auto;
+}
+
 .#{$wrap} {
-  display: grid;
+  display: block;
   height: auto;
   width: auto;
   justify-content: center;
@@ -44,6 +52,14 @@ $wrap: 'main-view';
 
   &__button {
     @extend %button
+  }
+
+  &__character-list {
+    @extend %character-list
+  }
+
+  &__form {
+    @extend %form
   }
 }
 

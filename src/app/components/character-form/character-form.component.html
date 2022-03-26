@@ -5,25 +5,25 @@
     </h2>
   </div>
   <div>
-    <form class="character-form__form">
+    <form [formGroup]="characterRegisterForm" (ngSubmit)="!editMode ? createCharacter() : editCharacter()" class="character-form__form">
       <div class="character-form__input-container">
         <label>Nombre:</label>
         <br>
-        <input class="character-form__input" placeholder="Nombre">
+        <input [value]="title" formControlName="title" class="character-form__input" placeholder="Nombre">
         <br>
         <label>Descripción:</label>
         <br>
-        <textarea class="character-form__input" placeholder="Descripción"></textarea>
+        <textarea [value]="body" formControlName="body" class="character-form__input" placeholder="Descripción"></textarea>
         <br>
         <label>Imagen:</label>
         <br>
-        <input class="character-form__input" placeholder="URL">
+        <input [value]="image" formControlName="image" class="character-form__input" placeholder="URL">
       </div>
       <div class="character-form__button-section">
-        <button class="character-form__button me-4">
+        <button [disabled]="!characterRegisterForm.valid" type="submit" class="character-form__button me-2">
           <i class="fa-solid fa-floppy-disk"></i>
           Guardar</button>
-        <button class="character-form__button">
+        <button (click)="closeCharacterForm()" class="character-form__button ms-2">
           <i class="fa-solid fa-xmark"></i>
           Cancelar</button>
       </div>

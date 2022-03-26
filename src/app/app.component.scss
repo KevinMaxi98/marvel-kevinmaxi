@@ -1,7 +1,7 @@
 $wrap: 'main-view';
 
 %header{
-
+  text-align: center;
 }
 
 %controls-section{
@@ -22,3 +22,4 @@ $wrap: 'main-view';
     @extend %controls-section
   }
 }
+

@@ -1,0 +1,53 @@
+$wrap: 'character';
+
+%image {
+  background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/005smp_ons_crd_02.jpg);
+  //width: 100px;
+  width: 100%;
+  max-width: 100%;
+  max-height: 346px;
+  height: 100vw;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+%name {
+  color: white;
+  text-align: center;
+}
+
+%button-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+%button {
+  background: white;
+}
+
+
+
+
+
+.#{$wrap} {
+  height: auto;
+  width: auto;
+  justify-content: center;
+  background: black;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  &__image {
+    @extend %image
+  }
+
+  &__name {
+    @extend %name
+  }
+
+  &__button-section {
+    @extend %button-section
+  }
+}

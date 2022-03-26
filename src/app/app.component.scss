@@ -9,6 +9,22 @@ $wrap: 'main-view';
   justify-content: space-around;
 }
 
+%search {
+  height: 24px;
+  width: -webkit-fill-available;
+  margin-right: 16px;
+  font-family: Arial, FontAwesome, serif
+}
+
+%button {
+  width: 55%;
+  background-color: #f12e2e;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+}
+
 .#{$wrap} {
   display: grid;
   height: auto;
@@ -20,6 +36,14 @@ $wrap: 'main-view';
 
   &__controls-section {
     @extend %controls-section
+  }
+
+  &__search {
+    @extend %search
+  }
+
+  &__button {
+    @extend %button
   }
 }
 

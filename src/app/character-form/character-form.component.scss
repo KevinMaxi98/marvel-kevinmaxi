@@ -1,8 +1,15 @@
 $wrap: 'character-form';
 
-%title {
+%title-section {
   text-align: center;
+  margin-top: 16px;
+
 }
+
+%title {
+  padding-top: 16px;
+}
+
 
 %form {
   display: flex;
@@ -14,6 +21,16 @@ $wrap: 'character-form';
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+
+%button {
+  background-color: #f12e2e;
+  width:  -webkit-fill-available;
+  font-size: 16px;
+  border-radius: 4px;
+  height: 36px;
+  border: none;
+  color: white;
 }
 
 %input-container {
@@ -28,7 +45,9 @@ $wrap: 'character-form';
 }
 
 %input {
-  width: -webkit-fill-available
+  width: -webkit-fill-available;
+  height: 24px;
+  margin-bottom: 24px;
 }
 
 
@@ -41,9 +60,13 @@ $wrap: 'character-form';
   background: white;
   padding-right: 15px;
   padding-left: 15px;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  border: 1px solid #d3d3d3;
 
-  &__title {
-    @extend %title
+  &__title-section {
+    @extend %title-section
   }
 
   &__form {
@@ -61,4 +84,16 @@ $wrap: 'character-form';
   &__input {
     @extend %input
   }
+
+  &__title {
+    @extend %title
+  }
+
+  &__button {
+    @extend %button
+  }
+}
+
+.me-4 {
+  margin-right: 24px;
 }

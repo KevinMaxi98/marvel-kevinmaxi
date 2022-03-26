@@ -1,0 +1,12 @@
+$wrap: 'character-list';
+
+
+%item {
+  padding-bottom: 24px;
+}
+
+.#{$wrap} {
+  &__item {
+    @extend %item
+  }
+}

@@ -2,10 +2,9 @@ $wrap: 'character';
 
 %image {
   background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/005smp_ons_crd_02.jpg);
-  //width: 100px;
   width: 100%;
   max-width: 100%;
-  max-height: 346px;
+  max-height: 435px;
   height: 100vw;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -13,11 +12,15 @@ $wrap: 'character';
 }
 
 %name {
+  padding-top: 16px;
   color: white;
   text-align: center;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 %button-section {
+  padding-top: 16px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -25,11 +28,14 @@ $wrap: 'character';
 
 %button {
   background: white;
+  width:  -webkit-fill-available;
+  font-size: 16px;
+  border-radius: 4px;
+  height: 48px;
+  border: none;
+  color: #f12e2e;
+  z-index: 1;
 }
-
-
-
-
 
 .#{$wrap} {
   height: auto;
@@ -38,6 +44,8 @@ $wrap: 'character';
   background: black;
   padding-right: 15px;
   padding-left: 15px;
+  margin-bottom: 24px;
+
 
   &__image {
     @extend %image
@@ -50,4 +58,24 @@ $wrap: 'character';
   &__button-section {
     @extend %button-section
   }
+
+  &__button {
+    @extend %button
+  }
+}
+
+.#{$wrap}:after {
+  content: "";
+  position: relative;
+  bottom: 30px;
+  left: 376px;
+  border-bottom: 30px solid #ececec;
+  border-left: 33px solid black;
+  width: 0;
+  z-index: 0;
+  margin-bottom: 24px;
+}
+
+.me-2 {
+  margin-right: 8px;
 }
